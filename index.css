@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Cormorant Garamond", serif;
+}
+
+@layer base {
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    @apply font-sans antialiased text-zinc-900 bg-[#FBFBFB] transition-colors duration-300 dark:bg-zinc-950 dark:text-zinc-100;
+  }
+
+  /* Refined scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-200 rounded-full hover:bg-zinc-300 transition-colors dark:bg-zinc-800 dark:hover:bg-zinc-700;
+  }
+}
+
+/* Professional UI Utilities - Modern Aesthetic */
+.ui-header {
+  @apply font-display font-medium text-[10px] text-zinc-400 uppercase tracking-[0.25em] border-b border-zinc-100 pb-4 mb-8 flex items-center justify-between dark:border-zinc-800 dark:text-zinc-500;
+}
+
+.ui-row {
+  @apply flex items-center py-5 border-b border-zinc-100/60 transition-all duration-300 hover:bg-white hover:shadow-[0_4px_20px_rgba(0,0,0,0.03)] px-4 -mx-4 dark:border-zinc-800/60 dark:hover:bg-zinc-900/50 dark:hover:shadow-[0_4px_20px_rgba(0,0,0,0.2)];
+}
+
+.ui-card {
+  @apply bg-white border border-zinc-200/50 shadow-[0_2px_12px_rgba(0,0,0,0.02)] rounded-2xl transition-all duration-500 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:border-zinc-300/50 dark:bg-zinc-900 dark:border-zinc-800 dark:shadow-[0_2px_12px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)] dark:hover:border-zinc-700;
+}
+
+.ui-label {
+  @apply text-[10px] font-mono font-medium uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500;
+}
+
+.ui-heading {
+  @apply font-display font-semibold text-zinc-900 tracking-tight dark:text-zinc-100;
+}
+
+.ui-btn {
+  @apply rounded-full bg-zinc-900 text-white uppercase tracking-[0.15em] text-[10px] font-bold py-4 px-10 transition-all duration-300 hover:bg-zinc-800 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-zinc-900/10 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200 dark:shadow-zinc-100/10;
+}
+
+.ui-btn-outline {
+  @apply rounded-full border border-zinc-200 bg-transparent text-zinc-900 uppercase tracking-[0.15em] text-[10px] font-bold py-4 px-10 transition-all duration-300 hover:bg-zinc-50 hover:border-zinc-300 disabled:opacity-50 dark:border-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-900 dark:border-zinc-700;
+}
+
+.ui-badge {
+  @apply px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider;
+}
+
+.ui-input {
+  @apply w-full bg-white border border-zinc-200 rounded-xl px-6 py-4 text-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-zinc-900/5 focus:border-zinc-900 dark:bg-zinc-900 dark:border-zinc-800 dark:text-zinc-100 dark:focus:ring-white/5 dark:focus:border-white;
+}
