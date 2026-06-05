@@ -187,7 +187,7 @@ The SQLite database (`career_path.db`) stores:
 
 ### Clone the Repository
 
-git clone https://github.com/yourusername/careerpath-ai.git
+git clone https://github.com/GanaCShekhar/careerpath-ai.git
 cd careerpath-ai
 
 ### Install Dependencies
